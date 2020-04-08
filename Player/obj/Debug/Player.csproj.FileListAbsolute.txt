@@ -1,0 +1,131 @@
+D:\GIT\Player\Player\bin\Debug\Player.exe.config
+D:\GIT\Player\Player\bin\Debug\Player.exe
+D:\GIT\Player\Player\bin\Debug\Player.pdb
+D:\GIT\Player\Player\bin\Debug\MaterialDesignColors.dll
+D:\GIT\Player\Player\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\GIT\Player\Player\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\GIT\Player\Player\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\GIT\Player\Player\obj\Debug\MainWindow.g.cs
+D:\GIT\Player\Player\obj\Debug\App.g.cs
+D:\GIT\Player\Player\obj\Debug\Player_MarkupCompile.cache
+D:\GIT\Player\Player\obj\Debug\Player_MarkupCompile.lref
+D:\GIT\Player\Player\obj\Debug\App.baml
+D:\GIT\Player\Player\obj\Debug\MainWindow.baml
+D:\GIT\Player\Player\obj\Debug\Player.g.resources
+D:\GIT\Player\Player\obj\Debug\Player.Properties.Resources.resources
+D:\GIT\Player\Player\obj\Debug\Player.csproj.GenerateResource.Cache
+D:\GIT\Player\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+D:\GIT\Player\Player\obj\Debug\Player.exe
+D:\GIT\Player\Player\obj\Debug\Player.pdb
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\Player.exe.config
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\Player.exe
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\Player.pdb
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\MaterialDesignColors.dll
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\toanv\Downloads\Player1-master\Player\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.csprojAssemblyReference.cache
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\MainWindow.g.cs
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\App.g.cs
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player_MarkupCompile.cache
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player_MarkupCompile.lref
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\App.baml
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\MainWindow.baml
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.g.resources
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.Properties.Resources.resources
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.csproj.GenerateResource.cache
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.csproj.CopyComplete
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.exe
+C:\Users\toanv\Downloads\Player1-master\Player\obj\Debug\Player.pdb
+G:\Code C#\M4U\Player\bin\Debug\Player.exe.config
+G:\Code C#\M4U\Player\bin\Debug\Player.exe
+G:\Code C#\M4U\Player\bin\Debug\Player.pdb
+G:\Code C#\M4U\Player\bin\Debug\MaterialDesignColors.dll
+G:\Code C#\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.dll
+G:\Code C#\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.pdb
+G:\Code C#\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.xml
+G:\Code C#\M4U\Player\obj\Debug\Player.csprojAssemblyReference.cache
+G:\Code C#\M4U\Player\obj\Debug\MainWindow.g.cs
+G:\Code C#\M4U\Player\obj\Debug\App.g.cs
+G:\Code C#\M4U\Player\obj\Debug\Player_MarkupCompile.cache
+G:\Code C#\M4U\Player\obj\Debug\Player_MarkupCompile.lref
+G:\Code C#\M4U\Player\obj\Debug\App.baml
+G:\Code C#\M4U\Player\obj\Debug\MainWindow.baml
+G:\Code C#\M4U\Player\obj\Debug\Player.g.resources
+G:\Code C#\M4U\Player\obj\Debug\Player.Properties.Resources.resources
+G:\Code C#\M4U\Player\obj\Debug\Player.csproj.GenerateResource.cache
+G:\Code C#\M4U\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+G:\Code C#\M4U\Player\obj\Debug\Player.csproj.CopyComplete
+G:\Code C#\M4U\Player\obj\Debug\Player.exe
+G:\Code C#\M4U\Player\obj\Debug\Player.pdb
+G:\Code C#\M4U\Player\obj\Debug\Player_Content.g.cs
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\Player.exe.config
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\Player.exe
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\Player.pdb
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\MaterialDesignColors.dll
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Hollow\Downloads\M4U\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.csprojAssemblyReference.cache
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\MainWindow.g.cs
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\App.g.cs
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player_MarkupCompile.cache
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player_MarkupCompile.lref
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\App.baml
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\MainWindow.baml
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.g.resources
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.Properties.Resources.resources
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.csproj.GenerateResource.cache
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.csproj.CopyComplete
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.exe
+C:\Users\Hollow\Downloads\M4U\M4U\Player\obj\Debug\Player.pdb
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\Player.exe.config
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\Player.exe
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\Player.pdb
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\MaterialDesignColors.dll
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.csprojAssemblyReference.cache
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\MainWindow.g.cs
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\App.g.cs
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player_MarkupCompile.cache
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player_MarkupCompile.lref
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\App.baml
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\MainWindow.baml
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.g.resources
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.Properties.Resources.resources
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.csproj.GenerateResource.cache
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.csproj.CopyComplete
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.exe
+C:\Users\Hollow\Desktop\M4U\Player\obj\Debug\Player.pdb
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\taglib-sharp.dll
+C:\Users\Hollow\Desktop\M4U\Player\bin\Debug\policy.2.0.taglib-sharp.config
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\Player.exe.config
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\Player.exe
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\Player.pdb
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\MaterialDesignColors.dll
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\policy.2.0.taglib-sharp.dll
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\taglib-sharp.dll
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\bin\Debug\policy.2.0.taglib-sharp.config
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.csprojAssemblyReference.cache
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\MainWindow.g.cs
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\App.g.cs
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player_MarkupCompile.cache
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player_MarkupCompile.lref
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\App.baml
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\MainWindow.baml
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.g.resources
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.Properties.Resources.resources
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.csproj.GenerateResource.cache
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.csproj.CoreCompileInputs.cache
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.csproj.CopyComplete
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.exe
+C:\Users\An-Laptop\Downloads\M4U (2)\M4U\Player\obj\Debug\Player.pdb

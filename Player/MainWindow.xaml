@@ -1,0 +1,421 @@
+﻿<Window x:Class="Player.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Player"
+        mc:Ignorable="d"
+        Icon="Images/fav.ico"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Music For You" Height="800" Width="500" ResizeMode="CanMinimize"  WindowStartupLocation="CenterScreen" Closing="Window_Closing" Foreground="LightSteelBlue">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Thumb}">
+                            <Grid x:Name="Grid">
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" Fill="Transparent" />
+                                <Border x:Name="Rectangle1" CornerRadius="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Background="{TemplateBinding Background}" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="Horizontal">
+                                    <Setter TargetName="Rectangle1" Property="Width" Value="Auto" />
+                                    <Setter TargetName="Rectangle1" Property="Height" Value="7" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!--ScrollBars-->
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Stylus.IsFlicksEnabled" Value="false" />
+                <Setter Property="Foreground" Value="BlanchedAlmond" />
+                <Setter Property="Background" Value="LightSkyBlue" />
+                <Setter Property="Width" Value="10" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Grid x:Name="GridRoot" Width="19" Background="{x:Null}">
+                                <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="false">
+                                    <Track.Thumb>
+                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" Style="{DynamicResource ScrollThumbs}" />
+                                    </Track.Thumb>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="false" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="false" />
+                                    </Track.DecreaseRepeatButton>
+                                </Track>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                    <Setter Value="{DynamicResource ButtonSelectBrush}" TargetName="Thumb" Property="Background" />
+                                </Trigger>
+                                <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background" />
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed" />
+                                </Trigger>
+                                <Trigger Property="Orientation" Value="Horizontal">
+                                    <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90" />
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90" />
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Width" Value="Auto" />
+                                    <Setter Property="Height" Value="12" />
+                                    <Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
+                                    <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand" />
+                                    <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <materialDesign:PackIcon x:Key="Play" Kind="Play" VerticalAlignment="Center" Width="30" Height="30">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Key="Pause" Kind="Pause" VerticalAlignment="Center" Width="30" Height="30">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Key="volume_low" Kind="VolumeOff" VerticalAlignment="Center" Width="30" Height="30">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Key="volume_high" Kind="VolumeHigh" VerticalAlignment="Center" Width="30" Height="30">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Key="mp3_repeat" Kind="RepeatOnce" VerticalAlignment="Center" Width="30" Height="30" RenderTransformOrigin="2.2,0.533">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Key="mp3_random" Kind="Shuffle" VerticalAlignment="Center" Width="30" Height="30" RenderTransformOrigin="2.2,0.533">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+            <materialDesign:PackIcon x:Key="mp3_repeatOff" Kind="RepeatOff" VerticalAlignment="Center" Width="30" Height="30" RenderTransformOrigin="2.2,0.533">
+                <materialDesign:PackIcon.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD69016"/>
+                        <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                        <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                    </LinearGradientBrush>
+                </materialDesign:PackIcon.Foreground>
+            </materialDesign:PackIcon>
+
+
+            <Storyboard x:Key="imageRotationStoryboard" Storyboard.TargetName="myImage" Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)">
+                <DoubleAnimation From="0" To="360" BeginTime="0:0:0" Duration="0:0:10" RepeatBehavior="Forever" />
+            </Storyboard>
+        </ResourceDictionary>
+
+    </Window.Resources>
+    <Grid Background="Black">
+        <MediaElement Name="mymedia" d:IsHidden="true" 
+                      LoadedBehavior="Manual" 
+                      UnloadedBehavior="Close"
+                      MediaOpened="Mymedia_MediaOpened"
+                      MediaEnded="Mymedia_MediaEnded"/>
+
+        <Grid Background="#44444444" Margin="10,10,10,0" Height="416" VerticalAlignment="Top">
+            <Grid VerticalAlignment="Top">
+                <Button ToolTip="Thêm bài hát" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                        Background="{x:Null}" BorderBrush="{x:Null}" 
+                        HorizontalAlignment="Left" Width="30" Height="Auto" Margin="0,5,0,86" 
+                        Name="butAddSongs" Click="ButAddSongs_Click" RenderTransformOrigin="0.3,-1.4">
+                    <materialDesign:PackIcon Kind="Plus" VerticalAlignment="Center" Width="20" Height="20">
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD69016"/>
+                                <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                                <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                </Button>
+                <Label Foreground="Aqua" Content="Music For You" Name="mp3Name" HorizontalContentAlignment="Center"  Margin="72,36,68,0"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="334" Height="31"/>
+            </Grid>
+
+
+            <Grid VerticalAlignment="Top" Margin="0,60,0,0" Height="200">
+                <Ellipse Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse.Stroke>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop x:Name="c1" Color="Orange" Offset="0.71"/>
+                            <GradientStop Color="Green"/>
+                            <GradientStop x:Name="c2" Color="Red" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+                <Ellipse Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF0C0604" Offset="1"/>
+                            <GradientStop Color="Orange" Offset="0.047"/>
+                            <GradientStop Color="Green" Offset="0.602"/>
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <Image ToolTip="Hình Album bài hát" x:Name="myImage" Source="Images/logo.png" Width="150" Height="Auto" RenderTransformOrigin="0.5, 0.5">
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource imageRotationStoryboard}" />
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                    </Image.Triggers>
+                    <Image.OpacityMask>
+                        <RadialGradientBrush GradientOrigin="0.5,0.5" Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                            <GradientStop Color="#ffffffff" Offset="0.9" />
+                            <GradientStop Color="#00ffffff" Offset="1" />
+                        </RadialGradientBrush>
+                    </Image.OpacityMask>
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="0" />
+                    </Image.RenderTransform>
+                </Image>
+            </Grid>
+
+            <Slider ToolTip="Thanh tiến trình phát nhạc" Name="Process" Style="{DynamicResource MaterialDesignDiscreteSlider}" materialDesign:TransitionAssist.DisableTransitions="False"
+                VerticalAlignment="Bottom"
+                Margin="10,0,90,51"
+                    Thumb.DragStarted="Process_DragStarted"
+                    Thumb.DragCompleted="Process_DragCompleted"
+                    IsMoveToPointEnabled="True"
+                    MouseLeftButtonUp="Process_MouseLeftButtonUp"                 
+                    >
+
+            </Slider>
+            <Grid VerticalAlignment="Bottom" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="45*"/>
+                    <ColumnDefinition Width="54*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="241*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="122*"/>
+                </Grid.ColumnDefinitions>
+                <Button ToolTip="Tắt nhạc" x:Name="stop_media" Click="Stop_media_Click" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" Grid.ColumnSpan="2" Height="Auto" Margin="0,8,0,0" RenderTransformOrigin="1.75,0.625">
+                    <materialDesign:PackIcon Kind="Stop" VerticalAlignment="Center" Width="30" Height="30" RenderTransformOrigin="2.2,0.533">
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD69016"/>
+                                <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                                <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                </Button>
+
+                <Button ToolTip="Quya lại bài trước đó" x:Name="back" 
+                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                        Background="{x:Null}" BorderBrush="{x:Null}"  HorizontalAlignment="Left" Grid.Column="4"
+                        Click="Back_Click" Margin="28,8,0,0" RenderTransformOrigin="0.125,0.55" Height="Auto">
+                    <materialDesign:PackIcon Kind="SkipPrevious" VerticalAlignment="Center" Width="30" Height="30">
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD69016"/>
+                                <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                                <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                </Button>
+
+                <Button ToolTip="Play/Pause" Background="{x:Null}" BorderBrush="{x:Null}"  Click="Play_Click" Name="MediaButton" Margin="73,4,58,-4" Grid.Column="4" Height="Auto" >
+
+                    <DynamicResource ResourceKey="Play"/>
+                </Button>
+
+                <Button ToolTip="Chuyển bài" x:Name="next" 
+                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" 
+                        Background="{x:Null}" BorderBrush="{x:Null}"  HorizontalAlignment="Right" 
+                        Margin="0,8,5,0" Grid.Column="4"
+                        Click="Next_Click" RenderTransformOrigin="-0.275,0.525" Height="Auto">
+                    <materialDesign:PackIcon Kind="SkipNext" VerticalAlignment="Center" Width="30" Height="30">
+                        <materialDesign:PackIcon.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD69016"/>
+                                <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                                <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                            </LinearGradientBrush>
+                        </materialDesign:PackIcon.Foreground>
+                    </materialDesign:PackIcon>
+                </Button>
+
+                <Expander ToolTip="Âm lượng" x:Name="expander" ExpandDirection="Up" IsExpanded="False" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="5" Margin="0,-35,0,-4" Grid.ColumnSpan="2" >
+                    <Expander.Header>
+                        <BulletDecorator>
+                            <BulletDecorator.Bullet>
+                                <ToggleButton ToolTip="Mute" x:Name="toggle_volume" Click="Toggle_volume_Click" Background="{x:Null}" BorderBrush="{x:Null}" Height="17" Margin="10,0,-10,0">
+                                    <materialDesign:PackIcon Kind="VolumeOff"  VerticalAlignment="Center" Width="30" Height="30">
+                                        <materialDesign:PackIcon.Foreground>
+                                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                                <GradientStop Color="#FFD69016"/>
+                                                <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                                                <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                                            </LinearGradientBrush>
+                                        </materialDesign:PackIcon.Foreground>
+                                    </materialDesign:PackIcon>
+                                </ToggleButton>
+                            </BulletDecorator.Bullet>
+                        </BulletDecorator>
+                    </Expander.Header>
+                    <Slider ValueChanged="Volume_bar_ValueChanged" x:Name="volume_bar" Value="0.5" Maximum=" 1" Minimum="0" Height="28" RenderTransformOrigin="0.5,0.5" Margin="47,0,-47,0" >
+                        <Slider.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Slider.RenderTransform>
+                    </Slider>
+                </Expander>
+                <Button ToolTip="Chuyển đổi chế độ" x:Name="mode_play" Click="Mode_play_Click" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" Height="Auto" Margin="0,8,0,0"  Grid.Column="2" Width="59" Grid.ColumnSpan="3">
+                    <DynamicResource ResourceKey="mp3_repeatOff"/>
+                </Button>
+
+
+            </Grid>
+            <Label ToolTip="Thời lượng bài hát" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Foreground="LimeGreen" BorderBrush="{x:Null}" x:Name="lblProgressStatus" Margin="384,344,27,43" Content="00:00" RenderTransformOrigin="0.333,0.778"/>
+
+        </Grid>
+        <ListBox ToolTip="Danh sách bài hát" VerticalAlignment="Bottom"
+                 Height="330" Margin="10,0,10,10"
+                 Background="#b4d9e3" Name="lstbSongs" 
+                 SelectionChanged="LstbSongs_SelectionChanged" 
+                 RenderTransformOrigin="0.5,0.5">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="BorderBrush" Value="White"></Setter>
+                    <Setter Property="BorderThickness" Value="1"></Setter>
+                    <Setter Property="FontSize" Value="14"></Setter>
+                    <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+                </Style>
+            </ListBox.Resources>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border></Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+        <materialDesign:DrawerHost
+                  Margin="10"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  BorderThickness="2"
+                  BorderBrush="{DynamicResource MaterialDesignDivider}" Height="751" Width="474">
+            <materialDesign:DrawerHost.LeftDrawerContent>
+                <Grid Margin="16">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="300"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="40*"/>
+                        <RowDefinition Height="450"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.ColumnSpan="2" Margin="15,4" HorizontalAlignment="Center" Width="90"> CHI TIẾT BÀI HÁT</TextBlock>
+                    <Label Grid.Column="0" Grid.Row="1" Content="Single: "></Label>
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="lbCaSi" ></Label>
+                    <Label Grid.Row="2" Content="Time: "/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="lbtime"></Label>
+                    <Label Grid.Row="3" Content="Album: "></Label>
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="lbAlbum"></Label>
+                    <Label Grid.Row="4" Content="Year: "></Label>
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="lbYear"></Label>
+                    <Label Grid.Row="5" Content="Disk: "></Label>
+                    <Label Grid.Row="5" Grid.Column="1" x:Name="lbdisk"></Label>
+                    <Label Grid.Row="6" Content="Track: "></Label>
+                    <Label Grid.Row="6" Grid.Column="1" x:Name="lbTrack"></Label>
+                    <Label Grid.Row="7" Content="Genre: "></Label>
+                    <Label Grid.Row="7" Grid.Column="1" x:Name="lbGere"></Label>
+                    <ScrollViewer Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2">
+                        <TextBlock HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" x:Name="lbLyric" ></TextBlock>
+                    </ScrollViewer>
+                                     
+                </Grid>
+            </materialDesign:DrawerHost.LeftDrawerContent>
+            <Grid MinWidth="480" MinHeight="480">
+                <Grid VerticalAlignment="Top" HorizontalAlignment="Right">
+                    <Button ToolTip="Chi tiết bài hát" Background="{x:Null}" BorderBrush="{x:Null}"
+                    Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                     CommandParameter="{x:Static Dock.Left}"
+                     Grid.Row="1"
+                     Grid.Column="0"
+                     Margin="4">
+                        <materialDesign:PackIcon Kind="FormatListBulleted"  VerticalAlignment="Center" Width="30" Height="30">
+                            <materialDesign:PackIcon.Foreground>
+                                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFD69016"/>
+                                    <GradientStop Color="#FFD6511E" Offset="0.747"/>
+                                    <GradientStop Color="#FF9B330D" Offset="0.807"/>
+                                </LinearGradientBrush>
+                            </materialDesign:PackIcon.Foreground>
+                        </materialDesign:PackIcon>
+                    </Button>
+                </Grid>
+            </Grid>
+        </materialDesign:DrawerHost>
+    </Grid>
+
+</Window>
